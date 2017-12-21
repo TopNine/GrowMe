@@ -16,6 +16,7 @@ import grow.listener.OnItemClickListener;
 import grow.photo.DrawBitmapActivity;
 import grow.photo.PhotoActivity;
 import grow.share.TestShareActivity;
+import session.SessionActivity;
 
 public class MainActivity extends Activity {
     private static final String TAG = "UI.MainActivity";
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
         items.add(new MainEntry.Builder().name("glide load").icon(R.mipmap.ic_launcher).id(1).builder());
         items.add(new MainEntry.Builder().name("draw bitmap").icon(R.mipmap.ic_launcher).id(2).builder());
         items.add(new MainEntry.Builder().name("Test Code").icon(R.mipmap.ic_launcher).id(3).builder());
+        items.add(new MainEntry.Builder().name("RecycleView Update").icon(R.mipmap.ic_launcher).id(4).builder());
 
         mAdapter.setItems(items);
     }
@@ -66,6 +68,9 @@ public class MainActivity extends Activity {
                         break;
                     case 3:
                         TestShareActivity.startActivity(mContext);
+                        break;
+                    case 4:
+                        SessionActivity.startActivity(mContext);
                         break;
                 }
             }
