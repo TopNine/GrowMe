@@ -41,12 +41,12 @@ public class MainActivity extends Activity {
         items.add(new MainEntry.Builder().name("Test Code").icon(R.mipmap.ic_launcher).id(3).builder());
         items.add(new MainEntry.Builder().name("RecycleView Update").icon(R.mipmap.ic_launcher).id(4).builder());
         items.add(new MainEntry.Builder().name("Listener").icon(R.mipmap.ic_launcher).id(5).builder());
-        Log.i(TAG, "initData: "+items);
+        Log.i(TAG, "initData: " + items);
         mAdapter.setItems(items);
     }
 
     private void initView() {
-        mRecycleView = (RecyclerView) findViewById(R.id.main_recycle_view);
+        mRecycleView = findViewById(R.id.main_recycle_view);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecycleView.setLayoutManager(manager);
