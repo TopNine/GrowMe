@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,6 +26,8 @@ import android.widget.Toast;
 import com.flow.grow.R;
 
 import java.io.File;
+
+import grow.glide.ImageLoadHelper;
 
 
 public class DrawBitmapActivity extends Activity {
@@ -78,43 +79,7 @@ public class DrawBitmapActivity extends Activity {
     }
 
     private void drawVIPBitmap() {
-        int width = mImageView.getMeasuredWidth();
-        int height = mImageView.getMeasuredHeight();
-
-        Log.d("xxx", "width = " + width + "; height = " + height);
-        Bitmap bitmap = Bitmap.createBitmap(width, height,
-                Bitmap.Config.ARGB_8888);
-
-        File file = new File("/sdcard/photo/xq.jpg");
-        if (file.exists())
-            Log.d("xxx", "path = " + file.getAbsolutePath());
-        Bitmap source = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round);
-        //BitmapFactory.decodeFile(file.getAbsolutePath()).copy(Bitmap.Config.ARGB_8888,true);
-        if (source != null)
-            Log.d("xxx", "source width = " + source.getWidth() + "; height = " + source.getHeight());
-        Canvas canvas = new Canvas(bitmap);
-        Paint paint = new Paint();
-        paint.setFilterBitmap(true);
-        paint.setDither(true);
-        Matrix matrix = new Matrix();
-        float scaleW = 0.8f * (width / source.getWidth());
-        float scaleH = 0.8f * (height / source.getHeight());
-        Log.i(TAG, "scaleW==" + scaleW);
-        Log.i(TAG, "scaleH==" + scaleH);
-        matrix.postScale(scaleW, scaleH);
-        matrix.postTranslate((width - source.getWidth() * scaleW) / 2, height - source.getHeight() * scaleH);
-        canvas.drawBitmap(source, matrix, paint);
-
-        matrix.reset();
-        Bitmap defBitmap = ((BitmapDrawable) getResources().getDrawable(R.mipmap.vip_image)).getBitmap();
-        scaleW = 0.25f * (width / defBitmap.getWidth());
-        scaleH = 0.25f * (height / defBitmap.getHeight());
-        Log.i(TAG, "def scaleW==" + scaleW);
-        Log.i(TAG, "def scaleH==" + scaleH);
-        matrix.setScale(scaleW, scaleH);
-        matrix.postTranslate((width - defBitmap.getWidth() * scaleW) / 2, 0);
-        canvas.drawBitmap(defBitmap, matrix, paint);
-        mImageView.setImageBitmap(bitmap);
+        ImageLoadHelper.loadVipCircle(this, getResources().getDrawable(R.mipmap.ic_launcher), mImageView);
     }
 
     private void drawVIPBitmap2() {

@@ -2,16 +2,22 @@ package grow.glide;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.flow.grow.R;
 
 import java.io.File;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class ImageLoadHelper {
     private static final String TAG = "CI.ImageLoadHelper";
@@ -72,5 +78,13 @@ public class ImageLoadHelper {
             Log.i(TAG, "-----------download url failed: " + e);
         }
         return null;
+    }
+
+    public static void loadVipCircle(Context context, Drawable res, ImageView view) {
+        RequestOptions options = new RequestOptions()
+                .transforms(new CircleTransform(2, Color.WHITE)
+                        , new VipTransform(context.getResources().getDrawable(R.mipmap.vip_image))
+                ).diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true);
+        Glide.with(context).load(res).apply(options).transition(withCrossFade()).into(view);
     }
 }
