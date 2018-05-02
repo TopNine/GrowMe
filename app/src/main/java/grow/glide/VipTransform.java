@@ -57,7 +57,7 @@ public class VipTransform extends BitmapTransformation {
 
         matrix.reset();
         Bitmap defBitmap = ((BitmapDrawable) mDefDrawable).getBitmap();
-        scaleH = 0.35f * (targetHeight / defBitmap.getHeight());
+        scaleH = 0.35f * targetHeight / defBitmap.getHeight();
         Log.i(TAG, "def scaleH==" + scaleH);
         matrix.setScale(scaleH, scaleH);
         matrix.postTranslate((targetWidth - defBitmap.getWidth() * scaleH) / 2, 0);
