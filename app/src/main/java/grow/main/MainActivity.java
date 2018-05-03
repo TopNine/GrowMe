@@ -17,6 +17,7 @@ import grow.listener.OnItemClickListener;
 import grow.photo.DrawBitmapActivity;
 import grow.photo.PhotoActivity;
 import grow.share.TestShareActivity;
+import grow.su.ColorActivity;
 import session.SessionActivity;
 
 public class MainActivity extends Activity {
@@ -41,6 +42,7 @@ public class MainActivity extends Activity {
         items.add(new MainEntry.Builder().name("Test Code").icon(R.mipmap.ic_launcher).id(3).builder());
         items.add(new MainEntry.Builder().name("RecycleView Update").icon(R.mipmap.ic_launcher).id(4).builder());
         items.add(new MainEntry.Builder().name("Listener").icon(R.mipmap.ic_launcher).id(5).builder());
+        items.add(new MainEntry.Builder().name("Color").icon(R.mipmap.ic_launcher).id(6).builder());
         Log.i(TAG, "initData: " + items);
         mAdapter.setItems(items);
     }
@@ -73,6 +75,9 @@ public class MainActivity extends Activity {
                         break;
                     case 4:
                         SessionActivity.startActivity(mContext);
+                        break;
+                    case 6:
+                        ColorActivity.launchActivity(mContext);
                         break;
                 }
             }
