@@ -1,4 +1,1 @@
 include 'App'
-//include ':CoreSDK'
-//
-//project(':CoreSDK').projectDir = new File('../CoreSDK')
