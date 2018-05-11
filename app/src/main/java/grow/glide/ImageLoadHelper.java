@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -16,15 +17,51 @@ import com.bumptech.glide.request.transition.Transition;
 import com.flow.grow.R;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.InputStream;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class ImageLoadHelper {
     private static final String TAG = "CI.ImageLoadHelper";
+    private static final DiskCacheStrategy DEFAULT_CATCH = DiskCacheStrategy.NONE;
 
     public static void loadUrl(Context context, String url, final ImageView imageView) {
         Glide.with(context)
                 .load(url)
+                .apply(new RequestOptions().centerCrop()
+                        .diskCacheStrategy(DEFAULT_CATCH)
+                        .skipMemoryCache(true)
+                        .error(R.mipmap.default_icon))
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(imageView);
+    }
+
+    public static void loadUrl(Context context, FileDescriptor url, final ImageView imageView) {
+        Glide.with(context)
+                .load(url)
+                .apply(new RequestOptions().centerCrop()
+                        .diskCacheStrategy(DEFAULT_CATCH)
+                        .skipMemoryCache(true)
+                        .error(R.mipmap.default_icon))
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(imageView);
+    }
+
+    public static void loadUrl(Context context, InputStream url, final ImageView imageView) {
+        Glide.with(context)
+                .load(url)
+                .apply(new RequestOptions().centerCrop()
+                        .diskCacheStrategy(DEFAULT_CATCH)
+                        .skipMemoryCache(true)
+                        .error(R.mipmap.default_icon))
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(imageView);
+    }
+
+    public static void loadUri(Context context, Uri uri, final ImageView imageView) {
+        Glide.with(context)
+                .load(uri)
                 .apply(new RequestOptions().centerCrop())
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView);
