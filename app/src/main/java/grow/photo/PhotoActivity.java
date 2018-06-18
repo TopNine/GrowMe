@@ -31,7 +31,7 @@ public class PhotoActivity extends Activity {
 
     private ImageView mImageView;
     private Button mButton;
-    private static String testUrl = "http://d.hiphotos.baidu.com/image/pic/item/ca1349540923dd54bdb23fb8db09b3de9d824819.jpg";
+    private static String testUrl = "http://cdn.ushareit.com/sz2/i/180511/1zgHAA5Y_CADHqBbuOToeo.png";
     private static String webpUrl = "http://cdn7.ushareit.cn/sz2/i/171113/1EdDJ_w300_h225_s1300552.gif";
 
     enum LoadType {
@@ -56,10 +56,10 @@ public class PhotoActivity extends Activity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadPhoto(LoadType.DOWNLOAD, testUrl);
+                loadPhoto(LoadType.URL, testUrl);
 //                laodMusicIcon();
-                loadNoExeImage();
-                testActivity(null);
+//                loadNoExeImage();
+//                testActivity(null);
             }
         });
     }

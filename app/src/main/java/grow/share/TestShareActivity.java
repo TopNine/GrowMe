@@ -70,6 +70,8 @@ public class TestShareActivity extends Activity {
         }
     }
 
+
+
     private void initView() {
         mStartBtn = (Button) findViewById(R.id.share_start);
         mImageView = findViewById(R.id.image_view);

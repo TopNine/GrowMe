@@ -57,7 +57,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="session.SessionActivity"
+            android:name="grow.session.SessionActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity

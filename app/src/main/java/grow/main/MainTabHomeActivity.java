@@ -2,6 +2,7 @@ package grow.main;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +20,7 @@ import grow.photo.DrawBitmapActivity;
 import grow.photo.PhotoActivity;
 import grow.share.TestShareActivity;
 import grow.su.ColorActivity;
-import session.SessionActivity;
+import grow.session.SessionActivity;
 
 public class MainTabHomeActivity extends Activity {
     private static final String TAG = "UI.MainTabHomeActivity";
@@ -28,12 +29,54 @@ public class MainTabHomeActivity extends Activity {
     private MainAdapter mAdapter;
     private Context mContext;
 
+    public static void launchActivity(Context context) {
+        Intent intent = new Intent(context, MainTabHomeActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_tab_home_activity);
         initView();
         initData();
+        Log.i(TAG, "onCreate: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart: ");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(TAG, "onDestroy: ");
+        super.onDestroy();
     }
 
     private void initData() {

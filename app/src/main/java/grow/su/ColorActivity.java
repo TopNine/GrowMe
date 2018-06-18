@@ -26,8 +26,8 @@ public class ColorActivity extends Activity {
     }
 
     private void initView() {
-        findViewById(R.id.color1).setBackgroundColor(getResources().getColor(R.color.statsbar_color));
-        findViewById(R.id.color2).setBackgroundColor(getResources().getColor(R.color.titlebar_colro));
+        findViewById(R.id.color1).setBackgroundColor(getResources().getColor(R.color.common_FF145dbb));
+        findViewById(R.id.color2).setBackgroundColor(getResources().getColor(R.color.common_FF1668d0));
         findViewById(R.id.btn_ok).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
