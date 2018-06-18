@@ -1,13 +1,17 @@
 package grow.main;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.flow.grow.R;
 
@@ -18,65 +22,31 @@ import grow.entry.MainEntry;
 import grow.listener.OnItemClickListener;
 import grow.photo.DrawBitmapActivity;
 import grow.photo.PhotoActivity;
+import grow.session.SessionActivity;
 import grow.share.TestShareActivity;
 import grow.su.ColorActivity;
-import grow.session.SessionActivity;
 
-public class MainTabHomeActivity extends Activity {
-    private static final String TAG = "UI.MainTabHomeActivity";
+public class MainTabHomeFragment extends Fragment {
+    private static final String TAG = "UI.MainTabHomeFragment";
 
     private RecyclerView mRecycleView;
     private MainAdapter mAdapter;
-    private Context mContext;
 
     public static void launchActivity(Context context) {
-        Intent intent = new Intent(context, MainTabHomeActivity.class);
+        Intent intent = new Intent(context, MainTabHomeFragment.class);
         context.startActivity(intent);
     }
 
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_tab_home_activity);
-        initView();
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.main_tab_home_activity, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        initView(view);
         initData();
-        Log.i(TAG, "onCreate: ");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "onRestart: ");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG, "onStart: ");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG, "onResume: ");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "onPause: ");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "onStop: ");
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.i(TAG, "onDestroy: ");
-        super.onDestroy();
     }
 
     private void initData() {
@@ -91,14 +61,14 @@ public class MainTabHomeActivity extends Activity {
         mAdapter.setItems(items);
     }
 
-    private void initView() {
-        mRecycleView = findViewById(R.id.main_recycle_view);
-        LinearLayoutManager manager = new LinearLayoutManager(this);
+    private void initView(View view) {
+        mRecycleView = view.findViewById(R.id.main_recycle_view);
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecycleView.setLayoutManager(manager);
         mAdapter = new MainAdapter();
         mRecycleView.setAdapter(mAdapter);
-        mContext = MainTabHomeActivity.this;
+        final Context context = getActivity();
         mAdapter.setOnItemClick(new OnItemClickListener() {
             @Override
             public void onItemClick(Object item) {
@@ -109,19 +79,19 @@ public class MainTabHomeActivity extends Activity {
 
                 switch (mainEntry.mId) {
                     case 1:
-                        PhotoActivity.startActivity(mContext);
+                        PhotoActivity.startActivity(context);
                         break;
                     case 2:
-                        DrawBitmapActivity.startDrawActivity(mContext);
+                        DrawBitmapActivity.startDrawActivity(context);
                         break;
                     case 3:
-                        TestShareActivity.startActivity(mContext);
+                        TestShareActivity.startActivity(context);
                         break;
                     case 4:
-                        SessionActivity.startActivity(mContext);
+                        SessionActivity.startActivity(context);
                         break;
                     case 6:
-                        ColorActivity.launchActivity(mContext);
+                        ColorActivity.launchActivity(context);
                         break;
                 }
             }

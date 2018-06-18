@@ -65,7 +65,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="grow.main.MainTabHomeActivity"
+            android:name="grow.main.MainTabHomeFragment"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 

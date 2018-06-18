@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GrowMe</string>
+    <string name="tab_main">Main</string>
 </resources>

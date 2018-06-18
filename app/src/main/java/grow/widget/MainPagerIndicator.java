@@ -39,7 +39,7 @@ public class MainPagerIndicator extends LinearLayout {
         setCurrentItem(mCurrentIndex);
     }
 
-    private void addIndicator(int iconRes, int textRes) {
+    public void addIndicator(int iconRes, int textRes) {
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.main_pager_indicator_item_view, null);
         TextView textView = view.findViewById(R.id.indicator_item_view);
         textView.setText(textRes);
@@ -58,7 +58,7 @@ public class MainPagerIndicator extends LinearLayout {
         });
     }
 
-    private void setCurrentItem(int index) {
+    public void setCurrentItem(int index) {
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View view = getChildAt(i);

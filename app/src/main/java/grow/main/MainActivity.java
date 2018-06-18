@@ -1,8 +1,9 @@
 package grow.main;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -10,11 +11,18 @@ import android.widget.Button;
 
 import com.flow.grow.R;
 
-public class MainActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
+
+import grow.widget.MainPagerIndicator;
+
+public class MainActivity extends FragmentActivity {
     private static final String TAG = "UI.MainActivity";
 
+    private static final int TAB_MAIN = 0;
     private ViewPager mViewPager;
     private MainPagerAdapter mPagerAdapter;
+    private MainPagerIndicator mIndicator;
     private Button mTitleView;
 
     @Override
@@ -28,10 +36,20 @@ public class MainActivity extends Activity {
     private void initView() {
         mViewPager = findViewById(R.id.main_viewpager);
         mTitleView = findViewById(R.id.main_title);
-        mTitleView.setOnClickListener(new View.OnClickListener() {
+
+        mIndicator = new MainPagerIndicator(this);
+        mIndicator.addIndicator(R.mipmap.ic_launcher_round, R.string.tab_main);
+
+        mIndicator.setCurrentItem(TAB_MAIN);
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(new MainTabHomeFragment());
+        mPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), fragments);
+        mViewPager.setAdapter(mPagerAdapter);
+
+        mIndicator.setOnIndicatorClickListener(new MainPagerIndicator.OnIndicatorClickListener() {
             @Override
-            public void onClick(View v) {
-                MainTabHomeActivity.launchActivity(MainActivity.this);
+            public void onIndicatorClick(View view, int position) {
+                mViewPager.setCurrentItem(position);
             }
         });
     }
