@@ -57,6 +57,7 @@ public class MainTabHomeFragment extends Fragment {
         items.add(new MainEntry.Builder().name("RecycleView Update").icon(R.mipmap.ic_launcher).id(4).builder());
         items.add(new MainEntry.Builder().name("Listener").icon(R.mipmap.ic_launcher).id(5).builder());
         items.add(new MainEntry.Builder().name("Color").icon(R.mipmap.ic_launcher).id(6).builder());
+        items.add(new MainEntry.Builder().name("Scroll").icon(R.mipmap.ic_launcher).id(7).builder());
         Log.i(TAG, "initData: " + items);
         mAdapter.setItems(items);
     }
@@ -91,6 +92,9 @@ public class MainTabHomeFragment extends Fragment {
                         SessionActivity.startActivity(context);
                         break;
                     case 6:
+                        ColorActivity.launchActivity(context);
+                        break;
+                    case 7:
                         ColorActivity.launchActivity(context);
                         break;
                 }
