@@ -16,13 +16,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="grow.biu.main.MainActivity">
+
+        <activity
+            android:name="grow.MainHomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="grow.biu.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name="grow.biu.photo.DrawBitmapActivity"
@@ -71,6 +80,10 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="grow.biu.share.TestOtherActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="grow.firstcode.binarytree.BinaryTreeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
