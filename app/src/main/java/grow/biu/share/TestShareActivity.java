@@ -85,6 +85,7 @@ public class TestShareActivity extends Activity {
 
     private void initView() {
         mStartBtn = (Button) findViewById(R.id.share_start);
+        mStartBtn.setBackgroundResource(0);
         mImageView = findViewById(R.id.image_view);
         mImageView2 = findViewById(R.id.image_view2);
         mStartBtn.setOnClickListener(new View.OnClickListener() {

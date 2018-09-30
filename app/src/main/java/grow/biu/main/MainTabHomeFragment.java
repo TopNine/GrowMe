@@ -51,13 +51,13 @@ public class MainTabHomeFragment extends Fragment {
 
     private void initData() {
         List<MainEntry> items = new ArrayList<>();
-        items.add(new MainEntry.Builder().name("glide load").icon(R.mipmap.ic_launcher).id(1).builder());
-        items.add(new MainEntry.Builder().name("draw bitmap").icon(R.mipmap.ic_launcher).id(2).builder());
-        items.add(new MainEntry.Builder().name("Test Code").icon(R.mipmap.ic_launcher).id(3).builder());
-        items.add(new MainEntry.Builder().name("RecycleView Update").icon(R.mipmap.ic_launcher).id(4).builder());
-        items.add(new MainEntry.Builder().name("Listener").icon(R.mipmap.ic_launcher).id(5).builder());
-        items.add(new MainEntry.Builder().name("Color").icon(R.mipmap.ic_launcher).id(6).builder());
-        items.add(new MainEntry.Builder().name("Scroll").icon(R.mipmap.ic_launcher).id(7).builder());
+        items.add(new MainEntry.Builder().name("glide load").icon(R.mipmap.ic_launcher).id(1).build());
+        items.add(new MainEntry.Builder().name("draw bitmap").icon(R.mipmap.ic_launcher).id(2).build());
+        items.add(new MainEntry.Builder().name("Test Code").icon(R.mipmap.ic_launcher).id(3).build());
+        items.add(new MainEntry.Builder().name("RecycleView Update").icon(R.mipmap.ic_launcher).id(4).build());
+        items.add(new MainEntry.Builder().name("Listener").icon(R.mipmap.ic_launcher).id(5).build());
+        items.add(new MainEntry.Builder().name("Color").icon(R.mipmap.ic_launcher).id(6).build());
+        items.add(new MainEntry.Builder().name("Scroll").icon(R.mipmap.ic_launcher).id(7).build());
         Log.i(TAG, "initData: " + items);
         mAdapter.setItems(items);
     }

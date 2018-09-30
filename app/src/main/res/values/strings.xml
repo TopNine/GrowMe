@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">GrowMe</string>
     <string name="tab_main">Main</string>
+    <string name="btn_binary_text">Test binary tree</string>
+    <string name="btn_send_msg">Test send msg</string>
+    <string name="btn_msg_quit">Test msg quit</string>
 </resources>

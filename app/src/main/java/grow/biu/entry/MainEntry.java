@@ -31,7 +31,7 @@ public class MainEntry {
             return this;
         }
 
-        public MainEntry builder() {
+        public MainEntry build() {
             return new MainEntry(this);
         }
     }

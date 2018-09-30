@@ -2,8 +2,6 @@ package grow.biu.utils;
 
 import android.content.Context;
 
-import junit.framework.Assert;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -47,7 +45,7 @@ public final class ObjectStore {
      * @return the object associated with specified key, or null if not found
      */
     public static Object get(String key) {
-        Assert.assertNotNull(key);
+//        Assert.assertNotNull(key);
         Object obj = null;
         synchronized (mObjects) {
             obj = mObjects.get(key);
@@ -61,7 +59,7 @@ public final class ObjectStore {
      * @return the object associated with specified key, or null if not found
      */
     public static Object remove(String key) {
-        Assert.assertNotNull(key);
+//        Assert.assertNotNull(key);
         Object obj = null;
         synchronized (mObjects) {
             obj = mObjects.remove(key);
