@@ -3,14 +3,15 @@ package grow;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.flow.grow.R;
 
-import grow.firstcode.binarytree.BinaryTreeActivity;
-
 public class MainHomeActivity extends AppCompatActivity {
+    private static final String TAG = "MainHomeActivity";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,22 @@ public class MainHomeActivity extends AppCompatActivity {
     }
 
     private void doBinaryTree() {
-        BinaryTreeActivity.launchActivity(this);
+//        BinaryTreeActivity.launchActivity(this);
+        testCode();
+    }
+
+    private void testCode() {
+        try {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.i(TAG, "NullPointerException: ");
+                    throw new NullPointerException("test exception");
+                }
+            }).start();
+        } catch (Exception e) {
+            Log.i(TAG, "testCode: " + e);
+            e.printStackTrace();
+        }
     }
 }
