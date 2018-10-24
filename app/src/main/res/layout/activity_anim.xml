@@ -6,20 +6,13 @@
     android:paddingBottom="@dimen/common_10">
 
     <Button
-        android:id="@+id/tv_binary_tree"
+        android:id="@+id/btn_operate_anim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/btn_binary_text"
+        android:text="@string/btn_anim"
         android:textColor="@color/black"
         android:textSize="@dimen/common_text_size_14sp" />
 
-    <Button
-        android:id="@+id/tv_anim"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/btn_binary_text"
-        android:textColor="@color/black"
-        android:textSize="@dimen/common_text_size_14sp" />
+
 </android.support.constraint.ConstraintLayout>

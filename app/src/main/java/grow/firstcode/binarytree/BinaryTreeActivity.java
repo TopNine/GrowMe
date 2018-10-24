@@ -1,5 +1,6 @@
 package grow.firstcode.binarytree;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -9,7 +10,6 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +19,7 @@ import com.flow.grow.R;
 
 import java.util.Random;
 
-public class BinaryTreeActivity extends AppCompatActivity {
+public class BinaryTreeActivity extends Activity {
     private static final String TAG = "BinaryTreeActivity";
 
     public static final int TEST_1 = 1;
