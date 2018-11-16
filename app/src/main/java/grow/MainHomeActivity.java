@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.flow.grow.R;
 
-import grow.firstcode.anim.AnimActivity;
+import grow.anim.AnimActivity;
 import grow.firstcode.binarytree.BinaryTreeActivity;
 
 public class MainHomeActivity extends Activity {
@@ -22,7 +22,7 @@ public class MainHomeActivity extends Activity {
     }
 
     private void initView() {
-        Button binaryTreeBtn = findViewById(R.id.tv_binary_tree);
+        Button binaryTreeBtn = findViewById(R.id.btn_binary_tree);
         binaryTreeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +30,7 @@ public class MainHomeActivity extends Activity {
             }
         });
 
-        Button animBtn = findViewById(R.id.tv_anim);
+        Button animBtn = findViewById(R.id.btn_anim);
         animBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
