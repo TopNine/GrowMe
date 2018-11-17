@@ -34,6 +34,7 @@ public class BinaryTreeActivity extends Activity {
     private Handler mHandler;
 
     public static void launchActivity(Context context) {
+        Log.d(TAG, "launchActivity: ");
         Intent intent = new Intent(context, BinaryTreeActivity.class);
         context.startActivity(intent);
     }

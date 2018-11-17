@@ -1,65 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<grow.widget.VerticalDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/common_10"
-    android:paddingBottom="@dimen/common_10">
+    android:layout_height="wrap_content"
+    android:foregroundGravity="bottom"
+    android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:foregroundGravity="top">
-
-        <Button
-            android:id="@+id/btn_binary_tree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/btn_binary_text"
-            android:textColor="@color/black"
-            android:textSize="@dimen/common_text_size_14sp" />
-
-        <Button
-            android:id="@+id/btn_anim"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/btn_anim"
-            android:textColor="@color/black"
-            android:textSize="@dimen/common_text_size_14sp"
-            app:layout_constraintTop_toBottomOf="@id/btn_binary_tree" />
-    </android.support.constraint.ConstraintLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_binary_tree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:foregroundGravity="bottom"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:text="@string/btn_binary_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/common_text_size_14sp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/btn_binary_text"
-            android:textColor="@color/black"
-            android:textSize="@dimen/common_text_size_14sp" />
+    <Button
+        android:id="@+id/btn_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_anim"
+        android:textColor="@color/black"
+        android:textSize="@dimen/common_text_size_14sp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/btn_anim"
-            android:textColor="@color/black"
-            android:textSize="@dimen/common_text_size_14sp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/btn_binary_text"
-            android:textColor="@color/black"
-            android:textSize="@dimen/common_text_size_14sp" />
-    </LinearLayout>
-</grow.widget.VerticalDrawerLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_binary_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/common_text_size_14sp" />
+</LinearLayout>

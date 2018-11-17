@@ -11,7 +11,7 @@ import android.widget.Button;
 import com.flow.grow.R;
 
 public class AnimActivity extends AppCompatActivity {
-    private static final String TAG = "BinaryTreeActivity";
+    private static final String TAG = "AnimActivity";
     private View mLoadingView;
 
     public static void launchActivity(Context context) {
@@ -37,8 +37,6 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     private void toggleLoading() {
-        boolean isVisible = mLoadingView.getVisibility() == View.VISIBLE;
-        mLoadingView.setVisibility(isVisible ? View.VISIBLE : View.GONE);
     }
 }
 
