@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/common_10"
+    android:paddingBottom="@dimen/common_10">
+
+    <TextView
+        android:id="@+id/tv_seek_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_30"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:textSize="@dimen/common_text_size_18sp" />
+
+    <TextView
+        android:id="@+id/tv_seek_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:textSize="@dimen/common_text_size_18sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seek_change" />
+
+    <SeekBar
+        android:id="@+id/sb_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seek_end" />
+
+</android.support.constraint.ConstraintLayout>

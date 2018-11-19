@@ -10,6 +10,7 @@ import com.flow.grow.R;
 
 import grow.anim.AnimActivity;
 import grow.firstcode.binarytree.BinaryTreeActivity;
+import grow.firstcode.seekbar.SeekBarActivity;
 
 public class MainHomeActivity extends Activity {
     private static final String TAG = "MainHomeActivity";
@@ -35,6 +36,14 @@ public class MainHomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 AnimActivity.launchActivity(MainHomeActivity.this);
+            }
+        });
+
+        Button seekBarBtn = findViewById(R.id.btn_seek_bar);
+        seekBarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SeekBarActivity.launchActivity(MainHomeActivity.this);
             }
         });
     }

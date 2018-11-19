@@ -5,4 +5,5 @@
     <string name="btn_send_msg">Test send msg</string>
     <string name="btn_msg_quit">Test msg quit</string>
     <string name="btn_anim">Test anim</string>
+    <string name="btn_seek_bar">Test SeekBar</string>
 </resources>
