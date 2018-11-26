@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/common_10"
@@ -13,16 +14,16 @@
         android:gravity="center"
         android:text="@string/btn_anim"
         android:textColor="@color/black"
-        android:textSize="@dimen/common_text_size_14sp" />
+        android:textSize="@dimen/common_text_size_14sp"
+        tools:ignore="MissingConstraints" />
 
-    <ProgressBar
-        android:id="@+id/pb_loading"
-        android:layout_width="@dimen/common_50"
-        android:layout_height="@dimen/common_50"
-        android:foregroundGravity="center_horizontal"
+    <grow.widget.LoadingView
+        android:id="@+id/lv_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_operate_anim" />
 
 </android.support.constraint.ConstraintLayout>

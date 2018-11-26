@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#030303</color>
+    <color name="red">#F44336</color>
+    <color name="white">#FFFEFE</color>
+    <color name="green">#03FB03</color>
+    <color name="blue">#0341FB</color>
     <color name="common_3F51B5">#3F51B5</color>
     <color name="common_303F9F">#303F9F</color>
     <color name="common_FF4081">#FF4081</color>
     <color name="common_FF145dbb">#FF145dbb</color>
     <color name="common_FF1668d0">#FF1668d0</color>
     <color name="common_FF606265">#FF606265</color>
-    <color name="common_FF069B06">#FF069B06</color>
     <color name="common_94da94">#94da94</color>
 </resources>

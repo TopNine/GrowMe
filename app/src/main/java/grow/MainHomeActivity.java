@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.flow.grow.R;
 
-import grow.anim.AnimActivity;
+import grow.firstcode.anim.AnimActivity;
 import grow.firstcode.binarytree.BinaryTreeActivity;
 import grow.firstcode.seekbar.SeekBarActivity;
 
