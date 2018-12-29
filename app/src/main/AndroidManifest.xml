@@ -94,6 +94,10 @@
             android:name="grow.firstcode.seekbar.SeekBarActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="grow.base.BaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

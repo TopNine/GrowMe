@@ -1,6 +1,5 @@
 package grow.firstcode.binarytree;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -19,7 +18,9 @@ import com.flow.grow.R;
 
 import java.util.Random;
 
-public class BinaryTreeActivity extends Activity {
+import grow.base.BaseActivity;
+
+public class BinaryTreeActivity extends BaseActivity {
     private static final String TAG = "BinaryTreeActivity";
 
     public static final int TEST_1 = 1;

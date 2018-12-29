@@ -4,14 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.flow.grow.R;
 
-public class SeekBarActivity extends AppCompatActivity {
+import grow.base.BaseActivity;
+
+public class SeekBarActivity extends BaseActivity {
     private static final String TAG = "SeekBarActivity";
 
     private TextView mSeekChangeView;

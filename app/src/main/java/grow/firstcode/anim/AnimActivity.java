@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.flow.grow.R;
 
-public class AnimActivity extends AppCompatActivity {
+import grow.base.BaseActivity;
+
+public class AnimActivity extends BaseActivity {
     private static final String TAG = "AnimActivity";
     private View mLoadingView;
 
@@ -27,6 +28,7 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        mLoadingView = findViewById(R.id.lv_loading);
         Button operateBtn = findViewById(R.id.btn_operate_anim);
         operateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,8 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     private void toggleLoading() {
+        int visibility = mLoadingView.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE;
+        mLoadingView.setVisibility(visibility);
     }
 }
 

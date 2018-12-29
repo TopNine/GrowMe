@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/loading">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/pb_grow_loading"
@@ -18,4 +22,11 @@
         android:text="@string/btn_anim"
         android:textColor="@color/black"
         android:textSize="@dimen/common_text_size_14sp" />
-</merge>
+
+    <ImageView
+        android:id="@+id/iv_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background" />
+</LinearLayout>
