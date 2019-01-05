@@ -2,7 +2,6 @@ package grow;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,7 +20,6 @@ public class MainHomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
         initView();
-        testMath();
     }
 
     private void initView() {
@@ -48,59 +46,5 @@ public class MainHomeActivity extends BaseActivity {
                 SeekBarActivity.launchActivity(MainHomeActivity.this);
             }
         });
-    }
-
-    private String ab = "10";
-    private String de;
-
-    private Book mBook;
-    private Book mBook2;
-
-    private void testMath() {
-        String cd = ab;
-        de = ab;
-        ab = "20";
-        Log.d(TAG, "testMath: ab: " + ab);
-        Log.d(TAG, "testMath: cd: " + cd);
-        Log.d(TAG, "testMath: de: " + de);
-
-        mBook = new Book();
-        mBook.setPage(10);
-        mBook.setPrice("100");
-
-        Book book1 = mBook;
-        mBook2 = mBook;
-        mBook.setPage(20);
-        Log.i(TAG, "testMath: book1: " + book1);
-        Log.i(TAG, "testMath: book2: " + mBook2);
-    }
-
-    private class Book {
-        String price;
-        int page;
-
-        public String getPrice() {
-            return price == null ? "" : price;
-        }
-
-        public void setPrice(String price) {
-            this.price = price;
-        }
-
-        public int getPage() {
-            return page;
-        }
-
-        public void setPage(int page) {
-            this.page = page;
-        }
-
-        @Override
-        public String toString() {
-            return "Book{" +
-                    "price='" + price + '\'' +
-                    ", page=" + page +
-                    '}';
-        }
     }
 }
