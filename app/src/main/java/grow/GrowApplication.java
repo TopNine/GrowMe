@@ -2,7 +2,7 @@ package grow;
 
 import android.app.Application;
 
-import grow.log.Logger;
+import grow.utils.Logger;
 
 public class GrowApplication extends Application {
     @Override

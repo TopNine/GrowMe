@@ -6,4 +6,8 @@
     <string name="btn_msg_quit">Test msg quit</string>
     <string name="btn_anim">Test anim</string>
     <string name="btn_seek_bar">Test SeekBar</string>
+    <string name="common_add">Add</string>
+    <string name="common_remove">Remove</string>
+    <string name="test_detach_list">test detach list</string>
+    <string name="test_code">test code</string>
 </resources>

@@ -1,4 +1,4 @@
-package grow.log;
+package grow.utils;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

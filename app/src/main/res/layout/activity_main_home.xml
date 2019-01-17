@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foregroundGravity="bottom"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="@dimen/common_20"
+    android:paddingBottom="@dimen/common_20">
 
     <Button
         android:id="@+id/btn_binary_tree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
         android:gravity="center"
         android:text="@string/btn_binary_text"
         android:textColor="@color/black"
@@ -18,6 +20,7 @@
         android:id="@+id/btn_anim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
         android:gravity="center"
         android:text="@string/btn_anim"
         android:textColor="@color/black"
@@ -27,8 +30,19 @@
         android:id="@+id/btn_seek_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
         android:gravity="center"
         android:text="@string/btn_seek_bar"
+        android:textColor="@color/black"
+        android:textSize="@dimen/common_text_size_14sp" />
+
+    <Button
+        android:id="@+id/btn_test_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
+        android:gravity="center"
+        android:text="@string/test_code"
         android:textColor="@color/black"
         android:textSize="@dimen/common_text_size_14sp" />
 </LinearLayout>
