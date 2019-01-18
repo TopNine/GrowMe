@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.flow.grow.R;
 
@@ -16,6 +19,7 @@ import java.util.Random;
 
 import grow.base.BaseActivity;
 import grow.dialog.BaseDialogFragment;
+import grow.utils.ToastUtil;
 
 public class TestCodeActivity extends BaseActivity {
     private static final String TAG = "Flow.TestCodeActivity";
@@ -84,5 +88,24 @@ public class TestCodeActivity extends BaseActivity {
         args.putString("msg", msg);
         dialogFragment.setArguments(args);
         dialogFragment.show(getSupportFragmentManager(), "test_code");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.test_code, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.list_detach:
+                testDetachList();
+                break;
+            case R.id.test_menu:
+                ToastUtil.maskText(this, "remove", Toast.LENGTH_LONG);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

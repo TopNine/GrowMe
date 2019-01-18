@@ -10,4 +10,6 @@
     <string name="common_remove">Remove</string>
     <string name="test_detach_list">test detach list</string>
     <string name="test_code">test code</string>
+    <string name="test_list_detach">test list detach</string>
+    <string name="test_menu">test menu</string>
 </resources>
