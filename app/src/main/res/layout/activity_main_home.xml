@@ -45,4 +45,14 @@
         android:text="@string/test_code"
         android:textColor="@color/black"
         android:textSize="@dimen/common_text_size_14sp" />
+
+    <Button
+        android:id="@+id/btn_test_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10"
+        android:gravity="center"
+        android:text="@string/test_intent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/common_text_size_14sp" />
 </LinearLayout>

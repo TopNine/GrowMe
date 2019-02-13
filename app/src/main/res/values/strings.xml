@@ -12,4 +12,10 @@
     <string name="test_code">test code</string>
     <string name="test_list_detach">test list detach</string>
     <string name="test_menu">test menu</string>
+    <string name="test_perform_2">test perform 2</string>
+    <string name="test_perform_1">test perform 1</string>
+
+    <string name="test_intent">test_intent</string>
+    <string name="intent_open_url">test open url</string>
+    <string name="intent_open_tel">intent open tel</string>
 </resources>

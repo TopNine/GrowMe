@@ -7,31 +7,31 @@
     android:paddingBottom="@dimen/common_20">
 
     <Button
-        android:id="@+id/test_detach_list"
+        android:id="@+id/intent_btn1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_60"
-        android:text="@string/test_detach_list"
+        android:text="@string/intent_open_url"
         android:textColor="@color/black"
         android:textSize="@dimen/common_text_size_15sp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/test_perform_1"
+        android:id="@+id/intent_btn2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_60"
         android:layout_marginTop="@dimen/common_10"
-        android:text="@string/test_perform_1"
+        android:text="@string/intent_open_tel"
         android:textSize="@dimen/common_text_size_15sp"
-        app:layout_constraintTop_toBottomOf="@+id/test_detach_list" />
+        app:layout_constraintTop_toBottomOf="@+id/intent_btn1" />
 
     <Button
-        android:id="@+id/test_perform_2"
+        android:id="@+id/intent_btn3"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_60"
         android:layout_marginTop="@dimen/common_10"
         android:text="@string/test_perform_2"
         android:textSize="@dimen/common_text_size_15sp"
-        app:layout_constraintTop_toBottomOf="@+id/test_perform_1" />
+        app:layout_constraintTop_toBottomOf="@+id/intent_btn2" />
 
 
 </android.support.constraint.ConstraintLayout>

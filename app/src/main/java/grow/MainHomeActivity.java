@@ -1,5 +1,6 @@
 package grow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import com.flow.grow.R;
 import grow.base.BaseActivity;
 import grow.firstcode.anim.AnimActivity;
 import grow.firstcode.binarytree.BinaryTreeActivity;
+import grow.firstcode.intent.IntentActivity;
 import grow.firstcode.seekbar.SeekBarActivity;
 import grow.test.TestCodeActivity;
 import grow.utils.ToastUtil;
@@ -51,11 +53,22 @@ public class MainHomeActivity extends BaseActivity {
                 SeekBarActivity.launchActivity(MainHomeActivity.this);
             }
         });
+
         Button testCodeBtn = findViewById(R.id.btn_test_code);
         testCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TestCodeActivity.launchActivity(MainHomeActivity.this);
+            }
+        });
+
+        Button testIntentBtn = findViewById(R.id.btn_test_intent);
+        testIntentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(IntentActivity.MY_ACTION);
+                intent.addCategory(IntentActivity.MY_CATEGORY);
+                startActivity(intent);
             }
         });
     }

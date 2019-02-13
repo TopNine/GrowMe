@@ -6,8 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class BaseActivity extends AppCompatActivity {
-    private static final String TAG = "Flow." +
-            "BaseActivity";
+    private static final String TAG = "Flow.BaseActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

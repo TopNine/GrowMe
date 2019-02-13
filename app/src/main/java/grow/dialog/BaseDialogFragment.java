@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -23,6 +24,14 @@ public class BaseDialogFragment extends DialogFragment {
 
     private static final String KEY_MSG = "msg";
     private Bundle mArgs;
+
+    public static void showDialog(FragmentManager fragmentManager, String msg) {
+        BaseDialogFragment dialogFragment = new BaseDialogFragment();
+        Bundle args = new Bundle();
+        args.putString("msg", msg);
+        dialogFragment.setArguments(args);
+        dialogFragment.show(fragmentManager, "base_dialog");
+    }
 
     @NonNull
     @Override
