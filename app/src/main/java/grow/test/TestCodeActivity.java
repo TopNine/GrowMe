@@ -56,6 +56,7 @@ public class TestCodeActivity extends BaseActivity {
             public void onClick(View v) {
                 Log.i(TAG, "perform1View: " + v.getId());
                 BaseDialogFragment.showDialog(getSupportFragmentManager(), "test perform click");
+                testRunnable();
             }
         });
 
@@ -157,5 +158,16 @@ public class TestCodeActivity extends BaseActivity {
 
     private double getRandomCount() {
         return new Random().nextInt(4) + 1;
+    }
+
+    private void testRunnable() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.i(TAG, "run: current thread: " + Thread.currentThread());
+            }
+        };
+
+        runnable.run();
     }
 }

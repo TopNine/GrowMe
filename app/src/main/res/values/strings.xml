@@ -18,4 +18,5 @@
     <string name="test_intent">test_intent</string>
     <string name="intent_open_url">test open url</string>
     <string name="intent_open_tel">intent open tel</string>
+    <string name="intent_btn_3">intent btn 3</string>
 </resources>
