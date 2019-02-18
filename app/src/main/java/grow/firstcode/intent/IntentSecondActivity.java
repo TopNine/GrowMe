@@ -2,7 +2,6 @@ package grow.firstcode.intent;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -12,6 +11,8 @@ import android.widget.TextView;
 import com.flow.grow.R;
 
 import grow.base.BaseActivity;
+import grow.utils.ActivityCollector;
+import grow.utils.Utils;
 
 public class IntentSecondActivity extends BaseActivity {
     private static final String TAG = "IntentSecondActivity";
@@ -47,9 +48,14 @@ public class IntentSecondActivity extends BaseActivity {
         findViewById(R.id.intent_btn2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:10086"));
-                startActivity(intent);
+                Utils.killProgress();
+            }
+        });
+
+        findViewById(R.id.intent_btn3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityCollector.finishAll();
             }
         });
 

@@ -3,6 +3,7 @@ package grow.firstcode.intent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,10 @@ public class IntentActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intent_activity);
+        if (savedInstanceState != null) {
+            String data = savedInstanceState.getString("bundle_data");
+            Log.i(TAG, "onCreate: data== " + data);
+        }
         initView();
     }
 
@@ -72,5 +77,11 @@ public class IntentActivity extends BaseActivity {
                     break;
             }
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putString("bundle_data", "save remove data");
     }
 }

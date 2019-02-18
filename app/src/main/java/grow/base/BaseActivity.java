@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import grow.utils.ActivityCollector;
+
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "Flow.BaseActivity";
 
@@ -12,12 +14,19 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, getClass().getSimpleName() + "---onCreate: ");
+        ActivityCollector.addActivity(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, getClass().getSimpleName() + "---onStart: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, getClass().getSimpleName() + "---onRestart: ");
     }
 
     @Override
