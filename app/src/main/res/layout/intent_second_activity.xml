@@ -10,6 +10,7 @@
         android:id="@+id/intent_btn1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_60"
+        android:background="@drawable/common_button_bg"
         android:text="@string/intent_open_url"
         android:textColor="@color/black"
         android:textSize="@dimen/common_text_size_15sp"

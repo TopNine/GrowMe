@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.flow.grow.R;
 
 import grow.base.BaseActivity;
-import grow.utils.ActivityCollector;
 import grow.utils.Utils;
 
 public class IntentSecondActivity extends BaseActivity {
@@ -20,6 +20,8 @@ public class IntentSecondActivity extends BaseActivity {
     public static final int REQUEST_CODE = 1;
 
     public static final String MSG = "msg";
+
+    private boolean mIsClick;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,13 +37,14 @@ public class IntentSecondActivity extends BaseActivity {
     }
 
     private void initView() {
-        findViewById(R.id.intent_btn1).setOnClickListener(new View.OnClickListener() {
+        final Button button1 = findViewById(R.id.intent_btn1);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra(MSG, "this is a good day");
-                setResult(RESULT_OK, intent);
-                finish();
+//                setResult(RESULT_OK, intent);
+//                finish();
             }
         });
 
@@ -55,7 +58,10 @@ public class IntentSecondActivity extends BaseActivity {
         findViewById(R.id.intent_btn3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityCollector.finishAll();
+//                ActivityCollector.finishAll();
+                Log.i(TAG, "onClick:mIsClick== " + mIsClick);
+                button1.setClickable(mIsClick);
+                mIsClick = !mIsClick;
             }
         });
 
